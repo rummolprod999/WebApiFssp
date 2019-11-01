@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 
@@ -5,14 +6,15 @@ namespace WebApiFssp.Models
 {
     public class FsspPerson
     {
-        [Required(ErrorMessage = "Укажите имя пользователя")]
+        [Required(ErrorMessage = "FirstName is empty")]
         public string FirstName { get; set; }
 
-        [Required(ErrorMessage = "Укажите отчество пользователя")]
+        [Required(ErrorMessage = "MiddleName is empty")]
         public string MiddleName { get; set; }
         
-        [Required(ErrorMessage = "Укажите фамилию пользователя")]
         public string LastName { get; set; }
+        
+        public List<int> Regions { get; set; }
         
     }
 }

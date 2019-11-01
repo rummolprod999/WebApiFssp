@@ -25,7 +25,7 @@ namespace WebApiFssp.Controllers
         {
             if (person==null)
             {
-                ModelState.AddModelError("", "Не указаны данные для пользователя");
+                ModelState.AddModelError("", "Bad data");
                 return BadRequest(ModelState);
             }
 
