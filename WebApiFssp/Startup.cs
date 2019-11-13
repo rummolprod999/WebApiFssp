@@ -9,6 +9,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using WebApiFssp.Services;
+using WebApiFssp.Services.anticaptcha;
 
 namespace WebApiFssp
 {
@@ -25,6 +27,9 @@ namespace WebApiFssp
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            services.AddTransient<IAnticaptcha, Rucaptcha>();
+            services.AddTransient<IFsspData, FsspData<Rucaptcha>>();
+            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

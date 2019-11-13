@@ -21,6 +21,14 @@
         <e p="Properties" t="Include">
           <e p="launchSettings.json" t="Include" />
         </e>
+        <e p="Services" t="Include">
+          <e p="FsspData.cs" t="Include" />
+          <e p="IFsspData.cs" t="Include" />
+          <e p="anticaptcha" t="Include">
+            <e p="IAnticaptcha.cs" t="Include" />
+            <e p="Rucaptcha.cs" t="Include" />
+          </e>
+        </e>
         <e p="Startup.cs" t="Include" />
         <e p="WeatherForecast.cs" t="Include" />
         <e p="WebApiFssp.csproj" t="IncludeRecursive" />
@@ -34,6 +42,7 @@
             </e>
           </e>
         </e>
+        <e p="urls_example.txt" t="Include" />
       </e>
       <e p="WebApiFssp.sln" t="IncludeFlat" />
       <e p="packages" t="ExcludeRecursive" />
