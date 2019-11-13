@@ -17,7 +17,19 @@ namespace WebApiFssp.Services
 
         public void GetDataFromFssp(FsspPerson person)
         {
-            _data = person.ToString() + _anticaptcha.ToString();
+            var firstUrl = CreateUrlFirstRequest(person);
+            _data = firstUrl;
+            
+        }
+
+        private string CreateUrlFirstRequest(FsspPerson person)
+        {
+            var lastName = person.LastName ?? "";
+            var firstName = person.FirstName ?? "";
+            var patronymic = person.MiddleName ?? "";
+            var birthDate = person.BirthDate ?? "";
+            var region = person.Regions.Count > 0 ? person.Regions[0] : -1;
+            return $"https://is.fssprus.ru/ajax_search?callback=jQuery3400049965671950707335_1573640973805&system=ip&is[extended]=1&nocache=1&is[variant]=1&is[region_id][0]={region}&is[last_name]={lastName}&is[first_name]={firstName}&is[drtr_name]=&is[ip_number]=&is[patronymic]={patronymic}&is[date]={birthDate}&is[address]=&is[id_number]=&is[id_type][0]=&is[id_issuer]=&_=1573640973810";
         }
     }
 }

@@ -14,6 +14,8 @@ namespace WebApiFssp.Models
         
         public string LastName { get; set; }
         
+        public string BirthDate { get; set; }
+        
         public List<int> Regions { get; set; }
         
     }
