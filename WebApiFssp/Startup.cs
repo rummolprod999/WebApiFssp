@@ -21,12 +21,13 @@ namespace WebApiFssp
             Configuration = configuration;
         }
 
-        public IConfiguration Configuration { get; }
+        internal static IConfiguration Configuration { get; set; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            var t = Configuration["API_KEY"];
             services.AddTransient<IAnticaptcha, Rucaptcha>();
             services.AddTransient<IFsspData, FsspData<Rucaptcha>>();
             

@@ -14,6 +14,10 @@
           <e p="PersonFsspController.cs" t="Include" />
           <e p="WeatherForecastController.cs" t="Include" />
         </e>
+        <e p="Helpers" t="Include">
+          <e p="NetworkHelpers.cs" t="Include" />
+          <e p="RegexpHelpers.cs" t="Include" />
+        </e>
         <e p="Models" t="Include">
           <e p="FsspPerson.cs" t="Include" />
         </e>
