@@ -37,7 +37,8 @@ namespace WebApiFssp.Services
         private void ExtractImg(string raw)
         {
             var imageBase = raw.GetDataFromRegex(@"data:image/jpeg;base64,(.+?)\\\"" id=\\""");
-            _data = _anticaptcha.DateFromImage(imageBase);
+            var captcha = _anticaptcha.DateFromImage(imageBase);
+            
         }
     }
 }
